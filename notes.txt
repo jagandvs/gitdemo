@@ -14,3 +14,239 @@ GIT HUB
 -> Maintained by server
 -> it is Maintained by microsoft.
 -> focused on centralized code hosting
+
+
+jaganmohan@Jagans-MacBook-Pro B53WE % git 
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--config-env=<name>=<envvar>] <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+jaganmohan@Jagans-MacBook-Pro B53WE % git --version
+git version 2.40.0
+jaganmohan@Jagans-MacBook-Pro B53WE % git --version
+git version 2.40.0
+jaganmohan@Jagans-MacBook-Pro B53WE % git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint:   git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint:   git branch -m <name>
+Initialized empty Git repository in /Users/jaganmohan/Guvi/B53WE/.git/
+jaganmohan@Jagans-MacBook-Pro B53WE % git remote add origin https://github.com/jagandvs/gitdemo.git
+jaganmohan@Jagans-MacBook-Pro B53WE % git remote -v
+origin  https://github.com/jagandvs/gitdemo.git (fetch)
+origin  https://github.com/jagandvs/gitdemo.git (push)
+jaganmohan@Jagans-MacBook-Pro B53WE % git add .
+jaganmohan@Jagans-MacBook-Pro B53WE % git commit -m 'intiial commit'
+[master (root-commit) d70f81c] intiial commit
+ 2 files changed, 16 insertions(+)
+ create mode 100644 index.html
+ create mode 100644 notes.txt
+jaganmohan@Jagans-MacBook-Pro B53WE % git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+jaganmohan@Jagans-MacBook-Pro B53WE %  git push --set-upstream origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 429 bytes | 429.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/jagandvs/gitdemo.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+jaganmohan@Jagans-MacBook-Pro B53WE % git checkout -b development
+Switched to a new branch 'development'
+jaganmohan@Jagans-MacBook-Pro B53WE % git push
+fatal: The current branch development has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin development
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+jaganmohan@Jagans-MacBook-Pro B53WE % git push --set-upstream origin development
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'development' on GitHub by visiting:
+remote:      https://github.com/jagandvs/gitdemo/pull/new/development
+remote: 
+To https://github.com/jagandvs/gitdemo.git
+ * [new branch]      development -> development
+branch 'development' set up to track 'origin/development'.
+jaganmohan@Jagans-MacBook-Pro B53WE % git add .
+jaganmohan@Jagans-MacBook-Pro B53WE % git commit -m 'added new page'
+[development dd51a6a] added new page
+ 1 file changed, 11 insertions(+)
+jaganmohan@Jagans-MacBook-Pro B53WE % git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 424 bytes | 424.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/jagandvs/gitdemo.git
+   d70f81c..dd51a6a  development -> development
+jaganmohan@Jagans-MacBook-Pro B53WE % git add .                                 
+jaganmohan@Jagans-MacBook-Pro B53WE % git commit -m 'removed title' 
+[development 77e0682] removed title
+ 1 file changed, 1 deletion(-)
+jaganmohan@Jagans-MacBook-Pro B53WE % git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 303 bytes | 303.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/jagandvs/gitdemo.git
+   dd51a6a..77e0682  development -> development
+jaganmohan@Jagans-MacBook-Pro B53WE % git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+jaganmohan@Jagans-MacBook-Pro B53WE % git checkout development
+Switched to branch 'development'
+Your branch is up to date with 'origin/development'.
+jaganmohan@Jagans-MacBook-Pro B53WE % git config 
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-pattern]
+    --get-all             get all values: key [value-pattern]
+    --get-regexp          get values for regexp: name-regex [value-pattern]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value-pattern]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-pattern]
+    --unset-all           remove all matches: name [value-pattern]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    --fixed-value         use string equality when comparing values to 'value-pattern'
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <type>     value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+jaganmohan@Jagans-MacBook-Pro B53WE % git config --local
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-pattern]
+    --get-all             get all values: key [value-pattern]
+    --get-regexp          get values for regexp: name-regex [value-pattern]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value-pattern]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-pattern]
+    --unset-all           remove all matches: name [value-pattern]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    --fixed-value         use string equality when comparing values to 'value-pattern'
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <type>     value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+jaganmohan@Jagans-MacBook-Pro B53WE % 
