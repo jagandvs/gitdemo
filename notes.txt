@@ -1,0 +1,16 @@
+GIT 
+-> It is a software
+-> It is a command line interface.
+-> It has to install locally.
+-> it is mantained by linux 
+-> Focuse on Version control and code sharing
+
+
+
+
+GIT HUB
+-> It is a service
+-> it is GUI
+-> Maintained by server
+-> it is Maintained by microsoft.
+-> focused on centralized code hosting
